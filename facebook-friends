@@ -1,0 +1,68 @@
+/*
+ * Programming Quiz: Facebook Friends (7-5)
+ */
+
+/*
+ * QUIZ REQUIREMENTS
+ * - Your code should have an object `facebookProfile`
+ * - The `facebookProfile` object should have the `name` (string), `friends` (number), and `messages` (array of strings) property
+ * - Your `facebookProfile` object should have the `postMessage()`, `deleteMessage()`, `addFriend()` and `removeFriend()` method
+ * - Carefully implement the desired functionality of each method, as decribed above
+ */
+
+
+// TIP - 
+// In an array, 
+// - addition at the end is done using push() method
+// - addition at a specific index is done using splice() method
+// - deletion from the beginning is done using pop() method
+// - deletion from a specific index is done using splice() method
+
+// your code goes here
+var facebookProfile = {
+    name: "Wendy Leon",
+    friends: 3,
+    messages: [
+                "This is message 1",
+                "This is message 2",
+                "This is message 3"
+              ],
+    postMessage: function postIt(message){
+        facebookProfile.messages.push(message)
+    },     
+    deleteMessage: function removeIt(index){
+        facebookProfile.messages.splice(index,1);
+        var message = "";
+        for (x=0;x<facebookProfile.messages.length; x++){
+            
+            message= message += facebookProfile.messages[x] +"\n";
+        }
+        return (message);
+        
+    },
+    addFriend: function addFriends(){
+        facebookProfile.friends +=1;
+        return(facebookProfile.friends);
+    },
+    removeFriend: function removeFriends(){
+        facebookProfile.friends -=1;
+        return(facebookProfile.friends);
+    },
+    showMessages: function printMessage(){
+        var message="";
+        for (x =0; x< facebookProfile.messages.length; x++){
+            
+            message= message += facebookProfile.messages[x] +"\n";
+        }
+        return message;
+    }
+};
+
+console.log("my name is:" + facebookProfile.name);
+console.log("I have " + facebookProfile.friends +" friends");
+console.log("This are my messages\n" + facebookProfile.showMessages());
+console.log("This the array after removeing 1 item\n" + facebookProfile.deleteMessage(1));
+console.log("I have 1 new friend so now I have " + facebookProfile.addFriend() + " friends");
+console.log("I lost 1 friend so now I have " + facebookProfile.removeFriend() + " friends");
+
+
