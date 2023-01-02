@@ -1,0 +1,49 @@
+Looping over dictionaries
+This page is a summary of some different ways to loop over a dictionary.
+If you have a dictionary:
+favorites = {
+'color': 'purple',
+'number': 42,
+'animal': 'turtle',
+'language': 'python'
+}
+You can loop over the keys, the values, or the entries, as shown below ...
+ Keys
+By default, Python will loop over the keys in the dictionary:
+for key in favorites:
+ print(key)
+Or you can use the keys method, which will do the same thing:
+for key in favorites.keys():
+ print(key)
+In both cases, the output will be:
+color
+number
+animal
+language
+ Values
+To loop over the values, use the values method.
+for value in favorites.values():
+ print(value)
+This will print:
+version 1.0
+purple
+42
+turtle
+python
+ Entries
+To loop over the entries, use the items method.
+for entry in favorites.items():
+ print(entry)
+This will print a tuple for each entry:
+('color', 'purple')
+('number', 42)
+('animal', 'turtle')
+('language', 'python')
+When looping over the entries, you can also assign the key and value to their own separate variables:
+for key, value in favorites.items():
+ print(f"my favorite {key} is {value}")
+This will print:
+my favorite color is purple
+my favorite number is 42
+my favorite animal is turtle
+my favorite language is python
